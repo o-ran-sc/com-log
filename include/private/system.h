@@ -41,8 +41,24 @@ extern "C" {
 
 ssize_t system_write(int, const void*,size_t);
 #endif
-
-
+  
+#if !HAVE_TEMP_FAILURE_RETRY
+// this has slightly different semantics
+// than glibc's unistd.h: we continue
+// while the return value is <0 (not just
+// == -1) and explicitly handle more
+// retryable failures (which are typically
+// all the same, but this is safer.)
+#define TEMP_FAILURE_RETRY(expression) \
+  ({ long int __TFR_R=0;               \
+    do __TFR_R=(long int)(body);       \
+    while(__TFR_R < (long int)0 &&     \
+          (errno == EINTR  ||          \
+           errno == EAGAIN ||          \
+           errno == EWOULDBLOCK));     \
+    __TFR_R; })
+#endif
+  
 #ifdef __cplusplus
 }
 #endif
