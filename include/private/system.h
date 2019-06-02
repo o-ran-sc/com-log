@@ -41,8 +41,17 @@ extern "C" {
 
 ssize_t system_write(int, const void*,size_t);
 #endif
-
-
+  
+#if !HAVE_TEMP_FAILURE_RETRY
+// copied from glibc's unistd.h
+#define TEMP_FAILURE_RETRY(expression)          \
+  (__extension__                                \
+   ({ long int __result;                        \
+     do __result = (long int) (expression);     \
+     while (__result == -1L && errno == EINTR); \
+     __result; }))
+#endif
+  
 #ifdef __cplusplus
 }
 #endif
