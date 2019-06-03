@@ -34,6 +34,24 @@
       "revId": "29af03a9682679db301f2e558dd5ca8cd3ecd2c4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "276bdf18_2de857e7",
+        "filename": "include/private/system.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2019-06-03T14:06:44Z",
+      "side": 1,
+      "message": "if we don\u0027t want to lean on that clause in the LGPL, here\u0027s a toy reimplementation.  note that it\u0027s difficult getting something significantly different than the glibc version, as the macro is so trivial, but this one does test for a few more errno values (at the cost of slightly changing the semantics, but for the better i think, as all of these are temporary failures in the same class as EINTR):\n\n#define TEMP_FAILURE_RETRY(body)   \\\n ({ long int __TFR_R\u003d0;            \\\n    do __TFR_R\u003d(long int)(body);   \\\n    while(__TFR_R \u003c (long int)0 \u0026\u0026 \\\n          (errno \u003d\u003d EINTR ||       \\\n           errno \u003d\u003d EAGAIN ||      \\\n           errno \u003d\u003d EWOULDBLOCK)); \\\n    __TFR_R; })\n\ni\u0027d kinda prefer going with the unistd.h version, as it\u0027s widely tested, but if this reimplementation is OK with folks, i\u0027ll switch to it.",
+      "parentUuid": "fc620359_d61e20f5",
+      "revId": "29af03a9682679db301f2e558dd5ca8cd3ecd2c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
