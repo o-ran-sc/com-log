@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd547904_c7a6f728",
+        "filename": "include/private/system.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-06-03T12:43:51Z",
+      "side": 1,
+      "message": "I\u0027m not sure if it is ok to copy-paste from GNU licensed source. Better to make own implementation, which can be similar than the GNU library code, but not exactly the same.",
+      "revId": "29af03a9682679db301f2e558dd5ca8cd3ecd2c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
