@@ -70,6 +70,24 @@
       "revId": "29af03a9682679db301f2e558dd5ca8cd3ecd2c4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "459ebad5_b4951e8d",
+        "filename": "include/private/system.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2019-06-04T13:40:58Z",
+      "side": 1,
+      "message": "fair enough — done and done.\n\nChris pointed out that we could probably just dispense with the macro altogether and expand it in the one place it\u0027s used, but we\u0027ve got it now and we might as well stick with it in case it proves useful elsewhere.",
+      "parentUuid": "ee34aa55_4a842e2e",
+      "revId": "29af03a9682679db301f2e558dd5ca8cd3ecd2c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
