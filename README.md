@@ -60,7 +60,6 @@ Requires
 ### Build requires
 * gcc > version 4
 * autoconf
-* gawk
 * libtool
 * automake
 * make
@@ -72,6 +71,9 @@ Requires
 
 ### Doxygen document generation requires
 * doxygen
+
+The supplied Dockerfile defines a image that builds and tests this library
+for continuous integration (CI) purposes such as a Jenkins job.
 
 Compiling
 ---------
