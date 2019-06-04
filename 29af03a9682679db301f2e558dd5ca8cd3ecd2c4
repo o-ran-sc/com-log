@@ -52,6 +52,24 @@
       "revId": "29af03a9682679db301f2e558dd5ca8cd3ecd2c4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee34aa55_4a842e2e",
+        "filename": "include/private/system.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-06-04T05:26:54Z",
+      "side": 1,
+      "message": "I would go for the own implementation, just to be on the safe side. Licenses are always tricky.",
+      "parentUuid": "276bdf18_2de857e7",
+      "revId": "29af03a9682679db301f2e558dd5ca8cd3ecd2c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
