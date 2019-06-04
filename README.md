@@ -10,16 +10,16 @@ Overview
 
 Library initialization is an optional step, which can be done using mdclog_init() function.
 By calling mdclog_init() the library user can define the logger identity tag, which is added to every log entry by
-the library. If the mdclog_init() function is not called, the library uses the program name as the identity. 
+the library. If the mdclog_init() function is not called, the library uses the program name as the identity.
 
-### Mapped Diagnostics Context 
+### Mapped Diagnostics Context
 
 The MDCs are thread specific key-value pairs, which are included to all log entries by the library.
 Thread specific here means that if a thread sets an MDC, then it is added only to the log entries
 written by that thread. Same applies to all MDC functions, a thread can only remove or get MDCs
 it has set.
 
-### Log entry format 
+### Log entry format
 
 Each log entry written with mdclog_write() function contains
 
@@ -87,7 +87,7 @@ make
 Installing
 ----------
 
-Installation is done using command `make install`.  
+Installation is done using command `make install`.
 Installation directory can be set with the `configure` options `--prefix` and `--libdir` before compilation.
 Optionally the root can be set with `DESTDIR=<my root dir>` argument to the `make install` command.
 
@@ -119,9 +119,9 @@ int main()
 
 ### Compilation
 The library should be taken to C code compilation with the pkg-config. The library installation installs also the corresponding
-.pc file under the library directory. If pkg-config does not find the mdclog .pc file, you should set environment 
-variable `PKG_CONFIG_PATH` poiting to the installation directory. For example, if the installation `prefix` was */home/username/mdclog* then 
-set the environment variable like this `export PKG_CONFIG_PATH=/home/username/mdclog/lib/pkgconfig`. 
+.pc file under the library directory. If pkg-config does not find the mdclog .pc file, you should set environment
+variable `PKG_CONFIG_PATH` poiting to the installation directory. For example, if the installation `prefix` was */home/username/mdclog* then
+set the environment variable like this `export PKG_CONFIG_PATH=/home/username/mdclog/lib/pkgconfig`.
 
 ```
 CFLAGS=$(pkg-config mdclog -cflags)
@@ -140,6 +140,14 @@ Unit testing
 ------------
 
 Unit testing is executed using `make check` or `make test` commands.
+
+
+Continuous Integration
+----------------------
+
+The supplied Dockerfile defines an image that builds and tests this library
+for continuous integration (CI) purposes such as a Jenkins job.
+
 
 Code coverage report
 --------------------
