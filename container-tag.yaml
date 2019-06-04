@@ -1,0 +1,4 @@
+# The Jenkins job requires a tag to build a Docker image,
+# but the image is not pushed so the value is not important.
+---
+tag: never-pushed
