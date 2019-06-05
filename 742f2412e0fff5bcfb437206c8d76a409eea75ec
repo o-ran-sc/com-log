@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "50edf111_63d8dc66",
+        "filename": "Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-06-05T07:01:34Z",
+      "side": 1,
+      "message": "Please include libjsoncpp-dev. That is needed in some unit tests.",
+      "revId": "742f2412e0fff5bcfb437206c8d76a409eea75ec",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61d6a007_431e837c",
+        "filename": "Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-06-05T07:01:34Z",
+      "side": 1,
+      "message": "The Docker best practices says that COPY is preferred over ADD when the extra functionality of add is not required.",
+      "revId": "742f2412e0fff5bcfb437206c8d76a409eea75ec",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "76e08964_2261c721",
         "filename": "README.md",
         "patchSetId": 2
