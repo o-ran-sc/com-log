@@ -1,0 +1,5 @@
+mdclog (@PACKAGE_VERSION@-1) unstable; urgency=medium
+
+  * Initial release
+
+ -- Roni Riska <roni.riska@nokia.com>  Tue, 18 Jun 2019 17:15:33 +0300

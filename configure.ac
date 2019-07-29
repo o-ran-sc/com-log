@@ -45,11 +45,12 @@ m4_define([MDCLOG_MICRO], 2)
 m4_define([MDCLOG_CURRENT], [0])
 m4_define([MDCLOG_REVISION], [2])
 m4_define([MDCLOG_AGE], [0])
-
+AC_CONFIG_MACRO_DIR([m4])
 AC_INIT([mdclog], [MDCLOG_MAJOR.MDCLOG_MINOR.MDCLOG_MICRO], [], [], [])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_FILES([Makefile])
-
+AC_CONFIG_FILES([debian/changelog])
+AC_CONFIG_FILES([rpm/mdclog.spec])
 AC_CONFIG_FILES([run-tests.sh], [chmod +x run-tests.sh])
 AM_INIT_AUTOMAKE([subdir-objects foreign 1.13 tar-pax -Wall -Werror])
 AM_PROG_AR
@@ -57,8 +58,9 @@ AM_PROG_LIBTOOL
 AC_PROG_CC_STDC
 AC_LANG([C])
 AC_PROG_CXX
+AM_PROG_CC_C_O
 AC_LANG([C++])
-AX_GCC_FUNC_ATTRIBUTE(visibility)
+AX_GCC_FUNC_ATTRIBUTE([visibility])
 
 AS_IF([test "xax_cv_have_func_attribute_visibility" != "x"],
 [
@@ -71,11 +73,6 @@ LT_INIT
 AX_PTHREAD
 AX_CODE_COVERAGE
 PKG_PROG_PKG_CONFIG
-
-AC_CHECK_DECL([TEMP_FAILURE_RETRY],
-              [AC_DEFINE(HAVE_TEMP_FAILURE_RETRY, 1, [Use system TEMP_FAILURE_RETRY])],
-              [AC_DEFINE(HAVE_TEMP_FAILURE_RETRY, 0, [Use local TEMP_FAILURE_RETRY])])
-
 PKG_CHECK_MODULES([JSONCPP], [jsoncpp],
 [
     have_jsoncpp=yes
