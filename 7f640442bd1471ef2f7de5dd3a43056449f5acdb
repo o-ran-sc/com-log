@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d1462185_818a1541",
+        "filename": "debian/mdclog-dev.install",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-29T12:39:37Z",
+      "side": 1,
+      "message": "a \"dev\" package should NOT include any binaries such as a .so file; it should ONLY include header files.  The dev package should depend on the non-dev (binary).  This allows people minimal installs (binary only) and helps people who install the \"dev\" package because the binary automatically comes along too.",
+      "range": {
+        "startLine": 2,
+        "startChar": 1,
+        "endLine": 2,
+        "endChar": 17
+      },
+      "revId": "7f640442bd1471ef2f7de5dd3a43056449f5acdb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f35b9539_8a0bb4f6",
+        "filename": "rpm/mdclog.spec.in",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-29T12:39:37Z",
+      "side": 1,
+      "message": "The devel package should depend on the base package.  I don\u0027t know how to read this spec file, but nothing leaps out at me for a dependency.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 3
+      },
+      "revId": "7f640442bd1471ef2f7de5dd3a43056449f5acdb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "727c100f_2bd0bef1",
+        "filename": "rpm/mdclog.spec.in",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-29T12:39:37Z",
+      "side": 1,
+      "message": "The devel package should not have any binary files, just headers.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 15
+      },
+      "revId": "7f640442bd1471ef2f7de5dd3a43056449f5acdb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
