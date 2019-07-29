@@ -42,7 +42,7 @@ extern "C" {
 ssize_t system_write(int, const void*,size_t);
 #endif
   
-#if !HAVE_TEMP_FAILURE_RETRY
+#ifndef TEMP_FAILURE_RETRY
 // this has slightly different semantics
 // than glibc's unistd.h: we continue
 // while the return value is <0 (not just

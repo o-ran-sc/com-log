@@ -26,7 +26,15 @@ RUN apt-get update && apt-get -q -y install \
   automake \
   libjsoncpp-dev \
   libtool \
-  pkg-config
+  pkg-config \
+  rpm \
+  devscripts \
+  debhelper \
+  gawk \
+  build-essential
 
-COPY . /tmp
-RUN cd /tmp && ./autogen.sh && ./configure && make && make test
+
+RUN mkdir -p /tmp/build
+COPY . /tmp/build
+RUN cd /tmp/build && ci/ci_build.sh
+
