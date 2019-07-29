@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "f0cd2c67_e32ca26a",
+        "filename": "debian/mdclog-dev.install",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-07-29T13:18:16Z",
+      "side": 1,
+      "message": "Please check for example this: https://www.netfort.gr.jp/~dancer/column/libpkg-guide/libpkg-guide.html#shldevpackagecontents\nOr search some -dev from https://packages.ubuntu.com/ and check the content.\n\nThe .so is only in in the -dev, and is a symlink to the actual shared library file, which is in the base package.",
+      "parentUuid": "3ec6b06a_71b32c2a",
+      "range": {
+        "startLine": 2,
+        "startChar": 1,
+        "endLine": 2,
+        "endChar": 17
+      },
+      "revId": "7f640442bd1471ef2f7de5dd3a43056449f5acdb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f35b9539_8a0bb4f6",
         "filename": "rpm/mdclog.spec.in",
         "patchSetId": 2
