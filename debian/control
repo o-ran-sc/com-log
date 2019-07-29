@@ -1,0 +1,20 @@
+Source: mdclog
+Priority: optional
+Maintainer: Roni Riska <roni.riska@nokia.com>
+Build-Depends: debhelper (>= 10), pkg-config, libtool, automake, gawk, autoconf, automake, autoconf-archive, make, gcc
+Standards-Version: 4.1.2
+Section: libs
+
+Package: mdclog-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: mdclog (= ${binary:Version}), ${misc:Depends}
+Description: Development files for mdclog
+ The mdclog-dev package contains public headers, library and pkg-config file for developing applications that use mdclog
+
+Package: mdclog
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A thread safe structured logging library
