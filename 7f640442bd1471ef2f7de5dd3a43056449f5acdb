@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3ec6b06a_71b32c2a",
+        "filename": "debian/mdclog-dev.install",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-29T13:04:45Z",
+      "side": 1,
+      "message": "I disagree that .so should be in the dev package.  I\u0027m only passing on what I believe is the required convention for packages.  Also have you tested the install of your packages?  If BOTH packages carry the same file, the second package will fail to install.",
+      "parentUuid": "751266ba_4b9f438a",
+      "range": {
+        "startLine": 2,
+        "startChar": 1,
+        "endLine": 2,
+        "endChar": 17
+      },
+      "revId": "7f640442bd1471ef2f7de5dd3a43056449f5acdb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f35b9539_8a0bb4f6",
         "filename": "rpm/mdclog.spec.in",
         "patchSetId": 2
@@ -93,6 +117,30 @@
       "revId": "7f640442bd1471ef2f7de5dd3a43056449f5acdb",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0710659_ef401dcb",
+        "filename": "rpm/mdclog.spec.in",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-29T13:04:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "341a3e96_b0a6bd08",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 3
+      },
+      "revId": "7f640442bd1471ef2f7de5dd3a43056449f5acdb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     },
     {
       "key": {
