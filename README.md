@@ -159,3 +159,19 @@ make check-code-coverage
 `
 
 The run produces a HTML report file and the path is printed out at the end of the make command.
+
+Binary package creation
+-----------------------
+
+Debian and RPM packages can be generated with the `package.sh` script.
+To make debian (.dep) packages you need to install 
+ * devscripts
+ * debhelper
+
+and run `./package.sh debian`
+
+To make RPM packages you need to install
+ * rpm-build
+
+and run `./package.sh rpm`
+
