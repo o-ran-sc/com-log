@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dce6aca4_801c9077",
+        "filename": "README.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-30T13:10:09Z",
+      "side": 1,
+      "message": "Please try to avoid trailing whitespace like this",
+      "range": {
+        "startLine": 167,
+        "startChar": 50,
+        "endLine": 167,
+        "endChar": 51
+      },
+      "revId": "991ea9dcf7df11844f1710e4e26813bf74509472",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f00aa7ae_cb35ac15",
+        "filename": "ci/Dockerfile",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-30T13:10:09Z",
+      "side": 1,
+      "message": "That\u0027s quite a long list.  Would you like me to create a base image and cache it at LF so your builds can reuse that, skip all these installs?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 17
+      },
+      "revId": "991ea9dcf7df11844f1710e4e26813bf74509472",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6a066cb_cf5667a2",
+        "filename": "ci/Dockerfile",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-30T13:10:09Z",
+      "side": 1,
+      "message": "Please see email - I have a small proposal for publishing the resulting files using the Dockerfile ENTRYPOINT feature.",
+      "revId": "991ea9dcf7df11844f1710e4e26813bf74509472",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09d0267f_41c52a83",
+        "filename": "package.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-30T13:10:09Z",
+      "side": 1,
+      "message": "Please add a license header here.  Also you might run this thru shellcheck:\n\n    https://www.shellcheck.net/\n\nIt has some very minor complaints about double quoting",
+      "revId": "991ea9dcf7df11844f1710e4e26813bf74509472",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
