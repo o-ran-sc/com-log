@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "94f184a4_aded02f2",
+        "filename": "ci/Dockerfile",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-31T10:47:54Z",
+      "side": 1,
+      "message": "great thanks for adding the publish entrypoint.  You don\u0027t really have to copy the script to /bin, you can use it from build/ci, but that\u0027s up to you.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 30
+      },
+      "revId": "7150cc53ac58ffc3b00aafd92767a5427d1bd56c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "907890f5_a10a586e",
+        "filename": "ci/publish.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-31T10:47:54Z",
+      "side": 1,
+      "message": "Please echo the script name when it starts, that really helps debug build issues",
+      "revId": "7150cc53ac58ffc3b00aafd92767a5427d1bd56c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "351284fc_ce7ce58c",
+        "filename": "ci/publish.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-31T10:47:54Z",
+      "side": 1,
+      "message": "Please add a check of whether $TARGET exists and exit with an error if it does not",
+      "revId": "7150cc53ac58ffc3b00aafd92767a5427d1bd56c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5da929fb_8bc8975a",
+        "filename": "ci/publish.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-31T10:47:54Z",
+      "side": 1,
+      "message": "Please add -v flag to make this verbose, so the build log shows the files that were copied",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 2
+      },
+      "revId": "7150cc53ac58ffc3b00aafd92767a5427d1bd56c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
