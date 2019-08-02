@@ -49,9 +49,9 @@ ssize_t system_write(int, const void*,size_t);
 // == -1) and explicitly handle more
 // retryable failures (which are typically
 // all the same, but this is safer.)
-#define TEMP_FAILURE_RETRY(expression) \
+#define TEMP_FAILURE_RETRY(expr)       \
   ({ long int __TFR_R=0;               \
-    do __TFR_R=(long int)(body);       \
+    do __TFR_R=(long int)(expr);       \
     while(__TFR_R < (long int)0 &&     \
           (errno == EINTR  ||          \
            errno == EAGAIN ||          \
