@@ -14,6 +14,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  *
+ *  This source code is part of the near-RT RIC (RAN Intelligent Controller)
+ *  platform project (RICP).
+ *
  * Internal MDC manipulation functions
  * The MDC values are stored to a thread specific list.
  * The list pointer is stored to a memory area got from pthread key functions.

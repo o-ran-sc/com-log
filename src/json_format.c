@@ -16,6 +16,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  *
+ *  This source code is part of the near-RT RIC (RAN Intelligent Controller)
+ *  platform project (RICP).
+ *
  * This module implements formatting of the log message into a json string.
  *
  * The following is an example of a json-formatted log. The formatted log

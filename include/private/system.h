@@ -17,6 +17,10 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
+ *
+ *  This source code is part of the near-RT RIC (RAN Intelligent Controller)
+ *  platform project (RICP).
+ *
  */
 
 #ifndef INCLUDE_PRIVATE_SYSTEM_H_
@@ -41,7 +45,7 @@ extern "C" {
 
 ssize_t system_write(int, const void*,size_t);
 #endif
-  
+
 #ifndef TEMP_FAILURE_RETRY
 // this has slightly different semantics
 // than glibc's unistd.h: we continue
@@ -58,7 +62,7 @@ ssize_t system_write(int, const void*,size_t);
            errno == EWOULDBLOCK));     \
     __TFR_R; })
 #endif
-  
+
 #ifdef __cplusplus
 }
 #endif
