@@ -1,0 +1,7 @@
+---
+distribution_type: packagecloud
+package_name:
+   - name: mdclog-0.0.4-1.x86_64.rpm
+   - name: mdclog-devel-0.0.4-1.x86_64.rpm
+   - name: mdclog-dev_0.0.4-1_amd64.deb
+   - name: mdclog_0.0.4-1_amd64.deb
