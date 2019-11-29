@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a72b610f_574273c2",
+        "filename": "releases/packagecloud-0.0.4-log.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-29T12:52:04Z",
+      "side": 1,
+      "message": "If you find time, please remove the unnecessary single quotes.  This is YAML, not JSON.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 3
+      },
+      "revId": "eb386b18edd84ac3697d648a8f088d5b5bcb6933",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
