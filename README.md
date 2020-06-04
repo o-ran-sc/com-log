@@ -155,13 +155,31 @@ for continuous integration (CI) purposes such as a Jenkins job.
 Code coverage report
 --------------------
 
-Code coverage report can be generated with commands
+Enable unit test gcov code coverage analysis by configuring gcov reporting
+directory:
 `
-./configure --enable-code-coverage
-make check-code-coverage
+configure --with-gcov-report-dir=DIR
 `
 
-The run produces a HTML report file and the path is printed out at the end of the make command.
+Directory can be an absolute path or a relative path to an log source root.
+Unit test build creates directory if it does not exist.
+
+Build and run unit tests with code coverage analysis:
+`
+make test_gcov
+`
+
+After successful unit test run code coverage (.gcov) result files are in
+a directory, what was defined by `--with-gcov-report-dir` configure option.
+
+In addition, graphical gcov front-ends such as lcov can be used for coverage
+analysis:
+`
+lcov --directory tst/ --directory src --capture --output-file coverage.info
+genhtml coverage.info --output-directory out
+`
+
+Open the out/index.html using any web browser.
 
 Binary package creation
 -----------------------
@@ -178,3 +196,17 @@ To make RPM packages you need to install
 
 and run `./package.sh rpm`
 
+Docker Tests
+------------
+
+It's also possible to test compilation, run unit tests and test building of
+rpm and Debian packages in a Docker:
+`
+docker build  --no-cache -f docker_test/Dockerfile-Test -t logtest:latest .
+`
+
+If needed, ready rpm and Debian packages can be copied from Docker to host. In
+below example packages are copied to host's /tmp/logtest-packages directory:
+`
+docker run -v /tmp/logtest-packages:/export logtest:latest /export
+`

@@ -27,3 +27,27 @@
 .tox
 docs/_build
 
+/build-aux/
+/configure
+/libtool
+/Makefile
+/Makefile.in
+/aclocal.m4
+/autom4te.cache/
+/config.*
+/m4/*
+.deps/
+.libs/
+*.o
+*.la
+*.lo
+*.Plo
+.dirstamp
+/run-tests.sh
+/testrunner
+*.gcov
+*.gcda
+*.gcno
+mdclog.pc
+rpm/mdclog.spec
+debian/changelog
