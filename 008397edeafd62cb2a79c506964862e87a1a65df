@@ -85,6 +85,23 @@
       "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d09b597_ed47c201",
+        "filename": "docker_test/publish.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-04T13:46:46Z",
+      "side": 1,
+      "message": "This file is not invoked during the build as far as I can tell, would you please drop it?  Or show me where it\u0027s used.  Here\u0027s a sandbox job output.  The job failed due to lack of permission at packagecloud, otherwise seems to be working fine, and I don\u0027t see the publish.sh script here.\n\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/com-log-deb-autotools-packagecloud-stage-master/1/console",
+      "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
