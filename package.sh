@@ -34,31 +34,30 @@ BUILD_DEB=0
 SKIP_TEST=0
 TARGET_DIR=/tmp
 
-for i in "$@"
-do
-    case "$i" in
-    --target-dir)
-        shift
-        TARGET_DIR=$i
-        ;;
-    --skip-config)
-        SKIP_CONF=1
-        ;;
-    --skip-test)
-        SKIP_TEST=1
-        ;;
-    rpm)
-        BUILD_RPM=1
-        shift
-        ;;
-    debian)
-        BUILD_DEB=1
-        ;;
-    *)
-        echo "Unknown argument $1"
-        exit 1
-        ;;
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        --target-dir)
+            TARGET_DIR="$2"
+            shift
+            ;;
+        --skip-config)
+            SKIP_CONF=1
+            ;;
+        --skip-test)
+            SKIP_TEST=1
+            ;;
+        rpm)
+            BUILD_RPM=1
+            ;;
+        debian)
+            BUILD_DEB=1
+            ;;
+        *)
+            echo "Unknown argument $1";
+            exit 1
+            ;;
     esac
+    shift
 done
 
 if [ $SKIP_CONF -eq 0 ]
@@ -73,6 +72,7 @@ then
         TESTOPT=--nocheck
     fi
     rpmbuild --nodeps $TESTOPT -bb rpm/mdclog.spec --define="_sourcedir $PWD" --define="_builddir $PWD" --define="_rpmdir .."
+    mkdir -p "$TARGET_DIR"
     cp ../x86_64/*.rpm "$TARGET_DIR"
 fi
 
@@ -83,7 +83,8 @@ then
         export DEB_BUILD_OPTIONS="nocheck noddebs"
     fi
     debuild -b -us -uc
-    cp ../x86_64/*.rpm "$TARGET_DIR"
+    mkdir -p "$TARGET_DIR"
+    cp ../*.deb "$TARGET_DIR"
 fi
 
 

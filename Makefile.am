@@ -20,8 +20,6 @@
 
 ACLOCAL_AMFLAGS = -I m4
 
-@CODE_COVERAGE_RULES@
-
 BASE_CFLAGS = -Wall -Werror -Wextra $(PTHREAD_CFLAGS) -I$(top_srcdir)/include -D_GNU_SOURCE
 BASE_LDFLAGS = $(PTHREAD_CFLAGS)
 BASE_LIBS = $(PTHREAD_LIBS)
@@ -71,6 +69,9 @@ libgmock_la_SOURCES = \
     3rdparty/googlemock/include/gmock/internal/gmock-internal-utils.h \
     3rdparty/googlemock/include/gmock/internal/gmock-port.h \
     3rdparty/googlemock/include/gmock/internal/gmock-pp.h \
+    3rdparty/googlemock/include/gmock/internal/custom/gmock-generated-actions.h \
+    3rdparty/googlemock/include/gmock/internal/custom/gmock-matchers.h \
+    3rdparty/googlemock/include/gmock/internal/custom/gmock-port.h \
     3rdparty/googlemock/src/gmock-cardinalities.cc \
     3rdparty/googlemock/src/gmock-internal-utils.cc \
     3rdparty/googlemock/src/gmock-matchers.cc \
@@ -97,6 +98,9 @@ libgmock_la_SOURCES = \
     3rdparty/googletest/include/gtest/internal/gtest-port.h \
     3rdparty/googletest/include/gtest/internal/gtest-string.h \
     3rdparty/googletest/include/gtest/internal/gtest-type-util.h \
+    3rdparty/googletest/include/gtest/internal/custom/gtest.h \
+    3rdparty/googletest/include/gtest/internal/custom/gtest-port.h \
+    3rdparty/googletest/include/gtest/internal/custom/gtest-printers.h \
     3rdparty/googletest/src/gtest-death-test.cc \
     3rdparty/googletest/src/gtest-filepath.cc \
     3rdparty/googletest/src/gtest-internal-inl.h \
@@ -135,7 +139,6 @@ testrunner_SOURCES = \
 
 testrunner_CFLAGS = \
    $(BASE_CFLAGS) \
-   $(CODE_COVERAGE_CFLAGS) \
    -DUNITTEST
 
 testrunner_CXXFLAGS = \
@@ -147,7 +150,7 @@ testrunner_CXXFLAGS = \
     $(JSONCPP_CFLAGS)
 
 testrunner_LDFLAGS = $(BASE_LDFLAGS)
-testrunner_LDADD = -lgmock $(BASE_LIBS) $(JSONCPP_LIBS) $(CODE_COVERAGE_LIBS)
+testrunner_LDADD = -lgmock $(BASE_LIBS) $(JSONCPP_LIBS)
 
 EXTRA_testrunner_DEPENDENCIES = \
    libgmock.la
@@ -157,8 +160,37 @@ test: testrunner
 
 TESTS = run-tests.sh
 
+if ENABLE_GCOV
+testrunner_CFLAGS += -O0 --coverage
+testrunner_LDADD += -lgcov
+
+test_gcov: test
+	@for p in src/*.o; do \
+		gcov -abcfru $$p 1>/dev/null; \
+	done
+	mkdir -p @GCOV_REPORT_DIR@
+	mv *.gcov @GCOV_REPORT_DIR@
+	ls -la @GCOV_REPORT_DIR@
+endif
+
+if ENABLE_RPM_BUILD
+rpm-pkg: package.sh
+	./package.sh rpm --target-dir @RPM_DIR@
+endif
+
+
+if ENABLE_DEB_BUILD
+deb-pkg: package.sh
+	./package.sh debian --target-dir @DEB_DIR@ --skip-test
+endif
+
 EXTRA_DIST = \
     $(top_srcdir)/mdclog.pc.in
 
 clean-local:
 	rm -f mdclog.pc
+
+if ENABLE_GCOV
+	rm -rf @GCOV_REPORT_DIR@
+	@find . -name '*.gcno' -o -name '*.gcda'| xargs -r rm
+endif
