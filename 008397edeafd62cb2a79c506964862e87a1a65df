@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0bc493ff_d83c03fc",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-06-04T17:38:54Z",
+      "side": 1,
+      "message": "README file is written with Markdown syntax, not a RST syntax. Can we use both syntaxes in the same file?",
+      "parentUuid": "aea9e495_125495eb",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 1
+      },
+      "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6e8d5b58_4dcd51db",
         "filename": "docker_test/Dockerfile-Test",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "40bad04e_225d2f2d",
+        "filename": "docker_test/Dockerfile-Test",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-06-04T17:38:54Z",
+      "side": 1,
+      "message": "That\u0027s true. Thanks Chris. Fixed.",
+      "parentUuid": "6e8d5b58_4dcd51db",
+      "range": {
+        "startLine": 22,
+        "startChar": 8,
+        "endLine": 22,
+        "endChar": 14
+      },
+      "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aff5742b_90034611",
         "filename": "docker_test/Dockerfile-Test",
         "patchSetId": 3
@@ -59,6 +107,30 @@
       "writtenOn": "2020-06-04T12:54:45Z",
       "side": 1,
       "message": "Please use the ubuntu base build image as documented here, it will save much time bcos it already has the build packages, you don\u0027t need to install much at all:\n\nhttps://wiki.o-ran-sc.org/display/ORAN/ORAN+Base+Docker+Images+for+CI+Builds",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 1
+      },
+      "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98e3eece_45c1f0e1",
+        "filename": "docker_test/Dockerfile-Test",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-06-04T17:38:54Z",
+      "side": 1,
+      "message": "True, base image is now changed. OK now?",
+      "parentUuid": "aff5742b_90034611",
       "range": {
         "startLine": 26,
         "startChar": 0,
@@ -118,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "e9b82c57_d59e1e78",
+        "filename": "docker_test/Dockerfile-Test",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-06-04T17:38:54Z",
+      "side": 1,
+      "message": "Comment added to publish.sh file why we need that file.",
+      "parentUuid": "ceb00618_07c6e0ac",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 1
+      },
+      "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e095510_fbf3e741",
         "filename": "docker_test/publish.sh",
         "patchSetId": 3
@@ -167,6 +263,24 @@
       "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96560c50_a00e8325",
+        "filename": "docker_test/publish.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-06-04T17:38:54Z",
+      "side": 1,
+      "message": "Added explanation comment to publish.sh file why we have publish.sh.",
+      "parentUuid": "eed616f7_91f3abd8",
+      "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
