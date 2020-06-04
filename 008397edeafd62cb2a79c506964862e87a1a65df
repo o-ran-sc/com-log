@@ -102,6 +102,24 @@
       "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eed616f7_91f3abd8",
+        "filename": "docker_test/publish.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-06-04T14:28:45Z",
+      "side": 1,
+      "message": "Script publish.sh is ran if a developer runs docker image (script has been defined to be an ENTRYPOINT of the dockerfile):\ndocker run -v /tmp/logtest-packages:/export logtest:latest /export\nWith help of publish.sh rpm and debian packages are copied from docker to host. Developer can then  manually check for example if the content of rpm and debian packages is expected one or do some other tests with packages.\nBut yes the building process itself does not need publish.sh file, it is there the help a developer to export packages from docker the host if packages are needed for example for some testing purposes.",
+      "parentUuid": "4d09b597_ed47c201",
+      "revId": "008397edeafd62cb2a79c506964862e87a1a65df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
