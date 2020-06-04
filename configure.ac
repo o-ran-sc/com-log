@@ -74,13 +74,91 @@ AC_SUBST([CFLAG_VISIBILITY])
 LT_INIT
 
 AX_PTHREAD
-AX_CODE_COVERAGE
 PKG_PROG_PKG_CONFIG
 PKG_CHECK_MODULES([JSONCPP], [jsoncpp],
 [
     have_jsoncpp=yes
     AC_DEFINE(HAVE_JSONCPP, 1, [Have jsoncpp])
 ], [AC_MSG_WARN([jsoncpp not found])])
+
+#
+# Configuration option --with-rpm-dir=DIR
+#   If this option is given, rpm packages building is enabled and ready rpms are
+#   copied to the directory.
+#
+AC_ARG_WITH([rpm-dir],
+    AS_HELP_STRING([--with-rpm-dir=DIR],
+        [Directory for build rpm packages]),
+    [AC_CHECK_PROG(RPMBUILD, rpmbuild, "yes", "no")
+     AC_CHECK_PROG(RPM, rpm, "yes", "no")
+     AS_IF([test "x$RPMBUILD" != xyes],
+         [AC_MSG_ERROR([rpmbuild needs to be installed])],
+     [test "x$RPM" != xyes],
+         [AC_MSG_ERROR([rpm is needs to be installed])])],
+    [with_rpm_dir=no])
+
+AC_MSG_CHECKING([rpm package])
+if test "x$with_rpm_dir" = "xno"; then
+    AC_MSG_RESULT([no])
+    RPM_DIR="/tmp"
+else
+    AC_MSG_RESULT([yes])
+    AC_MSG_NOTICE([rpm directory: $with_rpm_dir])
+    RPM_DIR="$with_rpm_dir"
+fi
+AC_SUBST(RPM_DIR)
+AM_CONDITIONAL([ENABLE_RPM_BUILD],[test "x$with_rpm_dir" != "xno"])
+
+
+#
+# Configuration option --with-deb-dir=DIR
+#   If this option is given, Debian packages packages building is enabled and ready
+#   packages are copied to the directory.
+#
+AC_ARG_WITH([deb-dir],
+    AS_HELP_STRING([--with-deb-dir=DIR],
+        [Directory for build Debian packages]),
+    [AC_CHECK_PROG(DEBUILD, dpkg-buildpackage, "yes", "no")
+     AS_IF([test "x$DEBUILD" != xyes],
+         [AC_MSG_ERROR([dpkg-buildpackage needs to be installed])],
+             [test "x$with_rpm_dir" != "xno"],
+                             [AC_MSG_ERROR([--with-deb-dir and --with-rpm-dir are mutually exclusive])])],
+    [with_deb_dir=no])
+
+AC_MSG_CHECKING([deb package])
+if test "x$with_deb_dir" = "xno"; then
+    AC_MSG_RESULT([no])
+    DEB_DIR="/tmp"
+else
+    AC_MSG_RESULT([yes])
+    AC_MSG_NOTICE([deb directory: $with_deb_dir])
+    DEB_DIR="$with_deb_dir"
+fi
+AC_SUBST(DEB_DIR)
+AM_CONDITIONAL([ENABLE_DEB_BUILD],[test "x$with_deb_dir" != "xno"])
+
+
+#
+# Configuration option --with-gcov-report-dir=DIR
+#   If this option is given, gcov unit test coverage analysis is enabled and
+#   results are copied to the directory.
+#
+AC_ARG_WITH([gcov-report-dir],
+    AS_HELP_STRING([--with-gcov-report-dir=DIR],
+        [Directory for GCOV report files]),
+    [],
+    [with_gcov_report_dir=no])
+AC_MSG_CHECKING([gcov])
+if test "x$with_gcov_report_dir" = "xno"; then
+    AC_MSG_RESULT([no])
+    GCOV_REPORT_DIR="gcov_report"
+else
+    AC_MSG_RESULT([yes])
+    AC_MSG_NOTICE([gcov report directory: $with_gcov_report_dir])
+    GCOV_REPORT_DIR="$with_gcov_report_dir"
+fi
+AC_SUBST(GCOV_REPORT_DIR)
+AM_CONDITIONAL([ENABLE_GCOV],[test "x$with_gcov_report_dir" != "xno"])
 
 MDCLOG_LT_VERSION=m4_format("%d:%d:%d", MDCLOG_CURRENT, MDCLOG_REVISION, MDCLOG_AGE)
 AC_SUBST(MDCLOG_LT_VERSION)
