@@ -1,4 +1,10 @@
-mdclog (@PACKAGE_VERSION@-1) unstable; urgency=medium
+mdclog (0.0.5-1) unstable; urgency=low
+
+  * Bump version number to test new makefile targets with Jenkins.
+
+ -- Timo Tietavainen <timo.tietavainen@nokia.com>  Tue, 09 Jun 2020 15:45:14 +0300
+
+mdclog (0.0.4-1) unstable; urgency=medium
 
   * Initial release
 

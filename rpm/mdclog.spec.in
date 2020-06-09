@@ -1,5 +1,5 @@
 Name:     mdclog
-Version:  @PACKAGE_VERSION@
+Version:  0.0.5
 Release:  1%{?dist}
 Summary:  A thread safe structured logging library
 
@@ -46,7 +46,10 @@ rm -f %{buildroot}%{_libdir}/lib*.*a
 %{_includedir}/mdclog
 
 %changelog
-* Tue Jun 18 2019 Roni Riska <roni.riska@nokia.com> - @PACKAGE_VERSION@-1
+* Tue Jun 09 2020 Timo Tietavainen <timo.tietavainen@nokia.com> - 0.0.5-1
+- Bump version number to test new makefile targets with Jenkins.
+
+* Tue Jun 18 2019 Roni Riska <roni.riska@nokia.com> - 0.0.4-1
 - new version
 
 

@@ -31,7 +31,7 @@
 
 m4_define([MDCLOG_MAJOR], 0)
 m4_define([MDCLOG_MINOR], 0)
-m4_define([MDCLOG_MICRO], 4)
+m4_define([MDCLOG_MICRO], 5)
 
 # MDCLOG ABI version with libtool
 #
@@ -46,7 +46,7 @@ m4_define([MDCLOG_MICRO], 4)
 # Change the numbers just before release.
 
 m4_define([MDCLOG_CURRENT], [0])
-m4_define([MDCLOG_REVISION], [4])
+m4_define([MDCLOG_REVISION], [5])
 m4_define([MDCLOG_AGE], [0])
 AC_CONFIG_MACRO_DIR([m4])
 AC_INIT([mdclog], [MDCLOG_MAJOR.MDCLOG_MINOR.MDCLOG_MICRO], [], [], [])
