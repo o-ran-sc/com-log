@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a777dfd_72d9686f",
+        "filename": "include/private/json_format.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-06-09T14:35:55Z",
+      "side": 1,
+      "message": "For other functions in this file there wasn\u0027t whitespace between function name and its doxygen comment. That\u0027s why I did the change but I reverted this change now.",
+      "parentUuid": "676fbfac_dc561bd3",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 2
+      },
+      "revId": "3e7ebba31bfa2810eb86248d38d1e9f5ae02acf3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b47f289f_bcd77a33",
         "filename": "rpm/mdclog.spec",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2020-06-09T13:59:49Z",
       "side": 1,
       "message": "using the PACKAGE_VERSION variable here seemed smart, but I don\u0027t really know.",
+      "range": {
+        "startLine": 2,
+        "startChar": 10,
+        "endLine": 2,
+        "endChar": 15
+      },
+      "revId": "3e7ebba31bfa2810eb86248d38d1e9f5ae02acf3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff25e516_89e5d39c",
+        "filename": "rpm/mdclog.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-06-09T14:35:55Z",
+      "side": 1,
+      "message": "We need to fill anyhow \u0027manually\" version info into %changelog below to show the change history. That\u0027s why I though it\u0027s better to have it also here as a value instead of using PACKAGE_VERSION macro.",
+      "parentUuid": "b47f289f_bcd77a33",
       "range": {
         "startLine": 2,
         "startChar": 10,
