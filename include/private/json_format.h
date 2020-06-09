@@ -52,7 +52,6 @@ extern "C" {
  * @return  in case of success: length of the output json string, excluding the ending zero
  *          in case of error: -1
  */
-
 int mdclog_internal_format_to_json_str(char* buffer,
                        size_t len,
                        struct timeval* timestamp,

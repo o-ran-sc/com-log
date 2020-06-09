@@ -49,5 +49,3 @@ docs/_build
 *.gcda
 *.gcno
 mdclog.pc
-rpm/mdclog.spec
-debian/changelog
