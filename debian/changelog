@@ -1,0 +1,11 @@
+mdclog (0.0.5-1) unstable; urgency=low
+
+  * Bump version number to test new makefile targets with Jenkins.
+
+ -- Timo Tietavainen <timo.tietavainen@nokia.com>  Tue, 09 Jun 2020 15:45:14 +0300
+
+mdclog (0.0.4-1) unstable; urgency=medium
+
+  * Initial release
+
+ -- Roni Riska <roni.riska@nokia.com>  Tue, 18 Jun 2019 17:15:33 +0300

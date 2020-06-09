@@ -42,74 +42,10 @@ This document provides the release notes for v0.0.4 of log.
 Version history
 ---------------
 
-+--------------------+--------------------+--------------------+--------------------+
-| **Date**           | **Ver.**           | **Author**         | **Comment**        |
-|                    |                    |                    |                    |
-+--------------------+--------------------+--------------------+--------------------+
-| 2019-08-05         | 0.0.4              | R Riska            | First version      |
-|                    |                    |                    |                    |
-+--------------------+--------------------+--------------------+--------------------+
+[0.0.5] - 2020-06-09
 
+* Bump version number to test new makefile targets with Jenkins.
 
-Summary
--------
+[0.0.4] - 2019-08-05
 
-This is the first version of this library.
-
-
-
-
-Release Data
-------------
-This is the first version of this library.
-
-
-
-
-Feature Additions
-^^^^^^^^^^^^^^^^^
-
-Bug Corrections
-^^^^^^^^^^^^^^^
-
-
-Deliverables
-^^^^^^^^^^^^
-
-Software Deliverables
-+++++++++++++++++++++
-
-Library mdclog.
-It can be retrieved from https://gerrit.o-ran-sc.org/r/com/log.git.
-
-
-
-Documentation Deliverables
-++++++++++++++++++++++++++
-
-
-
-
-
-Known Limitations, Issues and Workarounds
------------------------------------------
-
-System Limitations
-^^^^^^^^^^^^^^^^^^
-
-
-
-Known Issues
-^^^^^^^^^^^^
-
-Workarounds
-^^^^^^^^^^^
-
-
-
-
-
-References
-----------
-
-
+* First version.

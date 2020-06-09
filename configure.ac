@@ -31,7 +31,7 @@
 
 m4_define([MDCLOG_MAJOR], 0)
 m4_define([MDCLOG_MINOR], 0)
-m4_define([MDCLOG_MICRO], 4)
+m4_define([MDCLOG_MICRO], 5)
 
 # MDCLOG ABI version with libtool
 #
@@ -46,14 +46,12 @@ m4_define([MDCLOG_MICRO], 4)
 # Change the numbers just before release.
 
 m4_define([MDCLOG_CURRENT], [0])
-m4_define([MDCLOG_REVISION], [4])
+m4_define([MDCLOG_REVISION], [5])
 m4_define([MDCLOG_AGE], [0])
 AC_CONFIG_MACRO_DIR([m4])
 AC_INIT([mdclog], [MDCLOG_MAJOR.MDCLOG_MINOR.MDCLOG_MICRO], [], [], [])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_FILES([Makefile])
-AC_CONFIG_FILES([debian/changelog])
-AC_CONFIG_FILES([rpm/mdclog.spec])
 AC_CONFIG_FILES([run-tests.sh], [chmod +x run-tests.sh])
 AM_INIT_AUTOMAKE([subdir-objects foreign 1.13 tar-pax -Wall -Werror])
 AM_PROG_AR
