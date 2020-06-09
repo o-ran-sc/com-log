@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "684bf767_c6e5e6bc",
+        "filename": "include/private/json_format.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-09T15:05:12Z",
+      "side": 1,
+      "message": "Sorry to distract you, I thought this might have been an accident, they slip thru so easily.  I guess you get this one in the next changeset.",
+      "parentUuid": "74342cec_aa8cd313",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 2
+      },
+      "revId": "3e7ebba31bfa2810eb86248d38d1e9f5ae02acf3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b47f289f_bcd77a33",
         "filename": "rpm/mdclog.spec",
         "patchSetId": 2
