@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Chris Lott <cl778h@att.com>
+Code-Review+2: Timo Tietavainen <timo.tietavainen@nokia.com>
+Submitted-by: Timo Tietavainen <timo.tietavainen@nokia.com>
+Submitted-at: Wed, 10 Jun 2020 08:30:05 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/com/log/+/4038
+Project: com/log
+Branch: refs/heads/master
