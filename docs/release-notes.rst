@@ -31,8 +31,7 @@
 Release-Notes
 =============
 
-
-This document provides the release notes for v0.0.4 of log.
+This document provides the release notes of the log library.
 
 .. contents::
    :depth: 3
