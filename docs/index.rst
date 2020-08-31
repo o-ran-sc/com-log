@@ -36,6 +36,7 @@ Welcome to O-RAN SC log Documentation
    :caption: Contents:
 
    overview.rst
+   developer-guide.rst
    release-notes.rst
 
 
