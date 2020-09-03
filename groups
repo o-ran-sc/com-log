@@ -2,4 +2,3 @@
 #
 add1d629e64dce7097223c93ca6e710c1460b5ba                                	GitHub Replication
 d84c3432df569a8b5830b70ef85572f4b221dd7f                                	saml/oran-gerrit-com-log-committers
-ldap:cn=oran-gerrit-com-log-committers,ou=Groups,dc=freestandards,dc=org	ldap/oran-gerrit-com-log-committers
