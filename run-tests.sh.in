@@ -30,7 +30,7 @@ if test "$USE_VALGRIND" != "false" ; then
         export VALGRIND
         echo "valgrind enabled"
         export GTEST_DEATH_TEST_USE_FORK=1
-        export VALGRIND_EXTRA_ARGS="--error-exitcode=255 --track-fds=yes --leak-check=full --show-reachable=yes"
+        export VALGRIND_EXTRA_ARGS="--error-exitcode=255 --track-fds=yes --leak-check=full --show-reachable=yes --show-emwarns=yes --stats=yes --read-var-info=yes --log-file=/tmp/valgrind_leak.log --track-origins=yes"
         if test -z "$VALGRIND_SUPPRESSIONS" ; then
             export VALGRIND_SUPPRESSIONS="${TOP_SRCDIR}/tst/valgrind-suppressions.conf"
         fi
