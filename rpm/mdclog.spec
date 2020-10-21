@@ -1,5 +1,5 @@
 Name:     mdclog
-Version:  0.0.5
+Version:  0.1.0
 Release:  1%{?dist}
 Summary:  A thread safe structured logging library
 
@@ -46,6 +46,9 @@ rm -f %{buildroot}%{_libdir}/lib*.*a
 %{_includedir}/mdclog
 
 %changelog
+* Wed Oct 21 2020 Timo Tietavainen <timo.tietavainen@nokia.com> - 0.1.0-1
+- Add MDC Log entry formatting options and dynamic Log-Level change.
+
 * Tue Jun 09 2020 Timo Tietavainen <timo.tietavainen@nokia.com> - 0.0.5-1
 - Bump version number to test new makefile targets with Jenkins.
 

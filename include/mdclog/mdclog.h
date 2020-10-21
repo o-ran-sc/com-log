@@ -203,6 +203,19 @@ MDCLOG_EXPORT void mdclog_mdc_remove(const char *key);
  */
 MDCLOG_EXPORT void mdclog_mdc_clean(void);
 
+/**
+ * Adds in MDC log format with HostName, PodName, ContainerName, ServiceName,PID, CallbackNotifyforLogFieldChange
+ *
+ * @param  log_change_monitor values either 0 or 1.
+ *
+ *         Value: 0 signifies not to monitor to change in log severity
+ *         Value: 1 signifies to monitor to dynamic change in log severity
+ *
+ * @return   0 in case of success,
+ *          -1 in case of error.
+ */
+MDCLOG_EXPORT int mdclog_format_initialize(const int log_change_monitor);
+
 #ifdef __cplusplus
 }
 #endif

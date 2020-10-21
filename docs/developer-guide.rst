@@ -75,6 +75,11 @@ Example Log
 
  {"timestamp":1550045469,"severity":"INFO","logger":"applicationABC", "mdc":{"key1":"value1","key2":"value2"}, "message": "This is an example log"}
 
+.. code:: bash
+
+ {"ts":1602081593063,"crit":"INFO","id":"myapp","mdc":{"PID":"21587","POD_NAME":"mec-tta-app-5565fc4d6f-ppfl8","CONTAINER_NAME":"mec-tta-app","SERVICE_NAME":"MEC_TEST_APP","HOST_NAME":"master-an","SYSTEM_NAME":"SEP"},"msg":"This is an example log"}
+
+
 
 Using the library
 -----------------
@@ -87,10 +92,13 @@ Example usage
 
  void init_log()
  {
+    int log_change_monitor = 1;
     mdclog_attr_t *attr;
     mdclog_attr_init(&attr);
     mdclog_attr_set_ident(attr, "myapp");
     mdclog_init(attr);
+    if(mdclog_format_initialize(log_change_monitor)!=0)
+       mdclog_write(MDCLOG_ERR, "Failed to intialize the SEP log format !!!");
     mdclog_attr_destroy(attr);
  }
 
@@ -184,6 +192,13 @@ Log API's
 .. code:: bash
 
  void mdclog_mdc_clean(void)   
+
+12. Adds in MDC log format with HostName, PodName, ContainerName, ServiceName, PID, CallbackNotifyforLogFieldChange
+
+.. code:: bash
+
+ int mdclog_format_initialize(const int log_change_monitor);
+
 
 Unit testing
 ------------
