@@ -41,6 +41,10 @@ This document provides the release notes of the log library.
 Version history
 ---------------
 
+[0.1.0] - 2020-10-21
+
+* Add MDC Log entry formatting options and dynamic Log-Level change.
+
 [0.0.5] - 2020-06-09
 
 * Bump version number to test new makefile targets with Jenkins.

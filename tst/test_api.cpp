@@ -111,6 +111,49 @@ TEST_F(APITest, LogReinitClearsSetAttributes)
     mdclog_write(MDCLOG_ERR, "logentry");
 }
 
+
+TEST_F(APITest, CheckAllLogFieldValuesPresent)
+{
+    int log_change_monitor = 0;
+    EXPECT_EQ(0, mdclog_attr_init(&attr));
+    EXPECT_EQ(0, mdclog_attr_set_ident(attr, "myname"));
+    EXPECT_EQ(0, mdclog_init(attr));
+    EXPECT_EQ(0, mdclog_format_initialize(log_change_monitor));
+    mdclog_attr_destroy(attr);
+    EXPECT_EQ(0, mdclog_init(NULL));
+    std::vector<const char*> expected {"logentry","SYSTEM_NAME","HOST_NAME","SERVICE_NAME","CONTAINER_NAME","POD_NAME", __progname};
+    setupWriteExpects(expected);
+    mdclog_write(MDCLOG_ERR, "logentry");
+}
+
+TEST_F(APITest, CheckDefaultLogLevelAsError)
+{
+    int log_change_monitor = 1;
+    EXPECT_EQ(0, mdclog_attr_init(&attr));
+    EXPECT_EQ(0, mdclog_attr_set_ident(attr, "myname"));
+    EXPECT_EQ(0, mdclog_init(attr));
+    EXPECT_EQ(0, mdclog_format_initialize(log_change_monitor));
+    mdclog_attr_destroy(attr);
+    EXPECT_EQ(0, mdclog_init(NULL));
+    EXPECT_EQ(1, mdclog_level_get());
+}
+
+TEST_F(APITest, LogLevelMultipleInitialisation)
+{
+    int log_change_monitor = 1;
+    EXPECT_EQ(0, mdclog_attr_init(&attr));
+    EXPECT_EQ(0, mdclog_attr_set_ident(attr, "myname"));
+    EXPECT_EQ(0, mdclog_init(attr));
+    EXPECT_EQ(0, mdclog_format_initialize(log_change_monitor));
+    mdclog_attr_destroy(attr);
+    EXPECT_EQ(0, mdclog_init(NULL));
+    mdclog_write(MDCLOG_ERR, "logentry");
+    EXPECT_EQ(0, mdclog_init(NULL));
+    std::vector<const char*> expected {"logentry","SYSTEM_NAME","HOST_NAME","SERVICE_NAME","CONTAINER_NAME","POD_NAME", __progname};
+    setupWriteExpects(expected);
+    mdclog_write(MDCLOG_ERR, "logentry");
+}
+
 TEST_F(APITest, NullIsNotValidIdentity)
 {
     EXPECT_EQ(0, mdclog_attr_init(&attr));

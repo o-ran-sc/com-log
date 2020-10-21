@@ -75,6 +75,10 @@ Example Log
 
  {"timestamp":1550045469,"severity":"INFO","logger":"applicationABC", "mdc":{"key1":"value1","key2":"value2"}, "message": "This is an example log"}
 
+.. code:: bash
+
+ {"ts":1602081593063,"crit":"INFO","id":"myapp","mdc":{"PID":"21587","POD_NAME":"tta-app-5565fc4d6f-ppfl8","CONTAINER_NAME":"tta-app","SERVICE_NAME":"TEST_APP","HOST_NAME":"master-an","SYSTEM_NAME":"CloudSpace-0"},"msg":"This is an example log"}
+
 
 Using the library
 -----------------
@@ -87,10 +91,13 @@ Example usage
 
  void init_log()
  {
+    int log_change_monitor = 1;
     mdclog_attr_t *attr;
     mdclog_attr_init(&attr);
     mdclog_attr_set_ident(attr, "myapp");
     mdclog_init(attr);
+    if(mdclog_format_initialize(log_change_monitor)!=0)
+       mdclog_write(MDCLOG_ERR, "Failed to intialize MDC log format !!!");
     mdclog_attr_destroy(attr);
  }
 
@@ -184,6 +191,20 @@ Log API's
 .. code:: bash
 
  void mdclog_mdc_clean(void)   
+
+12. Initialzes mdclog print format using MDC Array by extracting the environment
+variables in the calling process for "SYSTEM_NAME", "HOST_NAME", "SERVICE_NAME",
+"CONTAINER_NAME", "POD_NAME" & "CONFIG_MAP_NAME"  mapped to HostName, ServiceName,
+ContainerName, Podname and Configuration-file-name of the services respectively.
+
+  Note: In K8s/Docker Containers the environment variables are declared in the Helm charts.
+
+  Refer xAPP developer guide for more information about how to define Helm chart.
+
+.. code:: bash
+
+ int mdclog_format_initialize(const int log_change_monitor);
+
 
 Unit testing
 ------------
