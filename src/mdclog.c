@@ -320,7 +320,7 @@ static char* parse_file(char* filename)
         fclose ( file );
      }
      if(found)
-         return(token);
+         return(strdup(token));
      else
          return(NULL);
 }
@@ -377,6 +377,7 @@ static void * monitor_loglevel_change_handler(void* arg)
                     //Retrieving Log Level from configmap by parsing configmap file
                     log_level = parse_file(fileName);
                     update_mdc_log_level_severity(log_level); //setting log level
+                    free(log_level);
                 }
             }
             inotify_rm_watch(ifd,wfd);
@@ -423,6 +424,7 @@ static int update_mdclog_array(const char* key, const char* value)
 int mdclog_format_initialize(const int logfile_monitor)
 {
     int ret = 0;
+    char* log_level_init=NULL;
     if( 0 == mdclog_configuration.log_format_init_done)
     {
         char buff_string[STR_BUFF]={'\0'};
@@ -442,11 +444,20 @@ int mdclog_format_initialize(const int logfile_monitor)
             snprintf(buff_string,STR_BUFF,"%d",getpid());
             char *logFile_Name = read_env_param(LOG_FILE_CONFIG_MAP);
             ret = update_mdclog_array("PID",buff_string);
+            if(logFile_Name)
+            {
+                log_level_init = parse_file(logFile_Name);
+                update_mdc_log_level_severity(log_level_init); //setting log level
+                free(log_level_init);
+
+            }
             if( (logfile_monitor != 0)  && (0 == ret) && logFile_Name)
             {
                 ret = enable_log_change_notify(logFile_Name);
                 free(logFile_Name);
             }
+            
+            
         }
     }
     return ret;
