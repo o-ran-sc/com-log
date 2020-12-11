@@ -1,3 +1,9 @@
+mdclog (0.1.1-1) unstable; urgency=low
+
+  * Add MDC Log entry formatting options and dynamic Log-Level change.
+
+ -- Timo Tietavainen <timo.tietavainen@nokia.com>  Fri, 11 Dec 2020 15:10:19 +0300
+
 mdclog (0.1.0-1) unstable; urgency=low
 
   * Add MDC Log entry formatting options and dynamic Log-Level change.

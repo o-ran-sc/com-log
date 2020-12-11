@@ -41,6 +41,10 @@ This document provides the release notes of the log library.
 Version history
 ---------------
 
+[0.1.1] - 2020-12-11
+
+* Add dynamic log level, reflecting from config map.
+
 [0.1.0] - 2020-10-21
 
 * Add MDC Log entry formatting options and dynamic Log-Level change.

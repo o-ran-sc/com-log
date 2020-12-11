@@ -1,5 +1,5 @@
 Name:     mdclog
-Version:  0.1.0
+Version:  0.1.1
 Release:  1%{?dist}
 Summary:  A thread safe structured logging library
 
@@ -46,6 +46,9 @@ rm -f %{buildroot}%{_libdir}/lib*.*a
 %{_includedir}/mdclog
 
 %changelog
+* Fri Dec 11 2020 Timo Tietavainen <timo.tietavainen@nokia.com> - 0.1.1-1
+- Add dynamic log level, reflecting from config map.
+
 * Wed Oct 21 2020 Timo Tietavainen <timo.tietavainen@nokia.com> - 0.1.0-1
 - Add MDC Log entry formatting options and dynamic Log-Level change.
 
@@ -54,7 +57,3 @@ rm -f %{buildroot}%{_libdir}/lib*.*a
 
 * Tue Jun 18 2019 Roni Riska <roni.riska@nokia.com> - 0.0.4-1
 - new version
-
-
-
-
