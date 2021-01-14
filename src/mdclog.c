@@ -261,7 +261,7 @@ char *read_env_param(const char*envkey)
 {
     if(envkey)
     {
-        char *value = secure_getenv(envkey);
+        char *value = getenv(envkey);
         if(value)
             return strdup(value);
     }
