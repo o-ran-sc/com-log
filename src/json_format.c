@@ -191,7 +191,7 @@ STATIC size_t format_identity(char* buffer, size_t len, const char* identity)
 
 STATIC size_t format_message(char* buffer, size_t len, const char* msg, va_list arglist)
 {
-    size_t msg_start;
+    int msg_start;
     size_t msg_len;
     size_t escaped_msg_len;
     size_t total_len;
@@ -206,9 +206,14 @@ STATIC size_t format_message(char* buffer, size_t len, const char* msg, va_list 
         return 0;
     }
 
-    msg_start = (size_t)sprintf(buffer, "\"%s\":\"", MESSAGE_KEY);
+	msg_start = snprintf(buffer, len, "\"%s\":\"", MESSAGE_KEY);
+    if (msg_start < 0 || (size_t)msg_start >= len)
+    {
+        buffer[0] = '\0';
+        return 0U;
+    }
 
-    tmp_buf = (char*)malloc(len - msg_start);
+    tmp_buf = (char*)malloc(len - (size_t)msg_start);
     if (!tmp_buf)
     {
         buffer[0] = '\0';
