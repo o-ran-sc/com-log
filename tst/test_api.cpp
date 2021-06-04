@@ -30,6 +30,10 @@ using namespace mdclogtest;
 extern "C" {
 const char *__progname;
 void mdclog_lib_clean(void);
+void  update_mdc_log_level_severity(char* log_level);
+char* parse_file(char* filename);
+void * monitor_loglevel_change_handler(void* arg);
+int enable_log_change_notify(const char* fileName);
 }
 
 class APITest: public testing::Test
@@ -274,4 +278,33 @@ TEST_F(APITest, SpecialCharactersInMDCKeyAreNotAccepted)
     EXPECT_EQ(errno, EINVAL);
     EXPECT_EQ(-1, mdclog_mdc_add("key with a non-printable char\t", "foo"));
     EXPECT_EQ(errno, EINVAL);
+}
+
+TEST_F(APITest, CleanMDC)
+{
+	mdclog_mdc_clean();
+}
+
+TEST_F(APITest, SetMDCLogLevel)
+{
+	char loglevel[6] = {};
+	update_mdc_log_level_severity(loglevel);
+	strcpy(loglevel,"DEBUG");
+	update_mdc_log_level_severity(loglevel);
+	strcpy(loglevel,"WARN");
+	update_mdc_log_level_severity(loglevel);
+	strcpy(loglevel,"ERR");
+	update_mdc_log_level_severity(loglevel);
+	strcpy(loglevel,"INFO");
+	update_mdc_log_level_severity(loglevel);
+}
+
+TEST_F(APITest, ParseConfigFile)
+{
+	char filename[20] = "../INFO.yaml";
+	parse_file(filename);
+	strcpy(filename,"INFO.yaml");
+	parse_file(filename);
+	monitor_loglevel_change_handler(filename);
+	//EXPECT_EQ(0, enable_log_change_notify(filename));
 }
