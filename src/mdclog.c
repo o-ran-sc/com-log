@@ -296,7 +296,11 @@ void  update_mdc_log_level_severity(char* log_level)
     mdclog_level_set(level);
 }
 
+#ifdef UNITTEST
+char* parse_file(char* filename)
+#else
 static char* parse_file(char* filename)
+#endif
 {
     char *token=NULL;
     char *search = ": ";
@@ -325,7 +329,11 @@ static char* parse_file(char* filename)
          return(NULL);
 }
 
+#ifdef UNITTEST
+void * monitor_loglevel_change_handler(void* arg)
+#else
 static void * monitor_loglevel_change_handler(void* arg)
+#endif
 {
     char *fileName = (char*) arg;
     int ifd;                   // the inotify file des
@@ -357,6 +365,9 @@ static void * monitor_loglevel_change_handler(void* arg)
             fprintf( stderr, "### ERR ### unable to add watch on config file %s: %s\n", fileName, strerror( errno ) );
         } else {
             mdclog_configuration.log_format_init_done = 1;
+#ifdef UNITTEST
+            mdclog_configuration.log_format_init_done = 0;
+#endif
             memset( &timeout, 0, sizeof(timeout) );
             while( mdclog_configuration.log_format_init_done ) {
                 FD_ZERO (&fds);
@@ -386,6 +397,9 @@ static void * monitor_loglevel_change_handler(void* arg)
     }
     free(bname);
     free(dname);
+#ifdef UNITTEST
+	return NULL;
+#endif
     pthread_exit(NULL);
 }
 
@@ -398,7 +412,11 @@ static int register_log_change_notify(const char *fileName)
     return pthread_create(&tid, &cb_attr,&monitor_loglevel_change_handler,(void *)strdup(fileName));
 }
 
+#ifdef UNITTEST
+int enable_log_change_notify(const char* fileName)
+#else
 static int enable_log_change_notify(const char* fileName)
+#endif
 {
     int ret = -1;
     struct stat fileInfo;
