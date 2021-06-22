@@ -41,6 +41,10 @@ This document provides the release notes of the log library.
 Version history
 ---------------
 
+[0.1.2] - 2021-06-22
+
+* Added corrections related to secure coding and improved code coverage.
+
 [0.1.1] - 2020-12-11
 
 * Add dynamic log level, reflecting from config map.

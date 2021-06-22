@@ -1,5 +1,5 @@
 Name:     mdclog
-Version:  0.1.1
+Version:  0.1.2
 Release:  1%{?dist}
 Summary:  A thread safe structured logging library
 
@@ -46,6 +46,9 @@ rm -f %{buildroot}%{_libdir}/lib*.*a
 %{_includedir}/mdclog
 
 %changelog
+* Tue Jun 22 2021  Abdulwahid <abdulwahid.w@nokia.com> - 0.1.2-1
+- Added corrections related to secure coding and improved code coverage.
+
 * Fri Dec 11 2020 Timo Tietavainen <timo.tietavainen@nokia.com> - 0.1.1-1
 - Add dynamic log level, reflecting from config map.
 

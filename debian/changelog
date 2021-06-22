@@ -1,3 +1,9 @@
+mdclog (0.1.2-1) unstable; urgency=low
+
+  * Added corrections related to secure coding and improved code coverage.
+
+ -- Abdulwahid <abdulwahid.w@nokia.com>  Tue, 22 June 2021 15:10:19 +0300
+
 mdclog (0.1.1-1) unstable; urgency=low
 
   * Add MDC Log entry formatting options and dynamic Log-Level change.
