@@ -472,10 +472,11 @@ int mdclog_format_initialize(const int logfile_monitor)
             if( (logfile_monitor != 0)  && (0 == ret) && logFile_Name)
             {
                 ret = enable_log_change_notify(logFile_Name);
-                free(logFile_Name);
             }
-            
-            
+            if(logFile_Name) {
+                free(logFile_Name);
+                logFile_Name = NULL;
+            }
         }
     }
     return ret;
