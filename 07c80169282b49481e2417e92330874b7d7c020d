@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94ff7f2f_63a69135",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001406
+      },
+      "writtenOn": "2021-08-24T16:39:14Z",
+      "side": 1,
+      "message": "Looks fine to me, check with Wahid and merge it.",
+      "revId": "07c80169282b49481e2417e92330874b7d7c020d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
