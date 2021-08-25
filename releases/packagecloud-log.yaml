@@ -1,9 +1,10 @@
 ---
 package_name: log
-log_dir: com-log-deb-autotools-packagecloud-stage-master/5
-ref: 942ff727db5e29ff716307f08880e929d2c9aa60
-version: 0.1.2
+log_dir: com-log-deb-autotools-packagecloud-stage-master/8
+ref: 52064a60cbfe7729f8c7ec484628fc7d8725cd9e
+version: 0.1.4
 packages:
-    - name: mdclog-devel-0.1.2-1.x86_64.rpm
-    - name: mdclog-dev_0.1.2-1_amd64.deb
-    - name: mdclog_0.1.2-1_amd64.deb
+    - name: mdclog-0.1.4-1.x86_64.rpm
+    - name: mdclog-devel-0.1.4-1.x86_64.rpm
+    - name: mdclog-dev_0.1.4-1_amd64.deb
+    - name: mdclog_0.1.4-1_amd64.deb
