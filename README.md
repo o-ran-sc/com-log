@@ -211,3 +211,16 @@ below example packages are copied to host's /tmp/logtest-packages directory:
 `
 docker run -v /tmp/logtest-packages:/export logtest:latest /export
 `
+
+### Building arm64-based mdclog deb packages 
+
+NOTE: make sure you've installed all the required tools (see above)
+apt install devscripts autoconf gawk libtool automake pkg-config autoconf-archive libjsoncpp-dev debhelper -y
+
+# Building packages
+
+cd <path>/log
+./autogen.sh 
+./configure
+make
+./package.sh debian
