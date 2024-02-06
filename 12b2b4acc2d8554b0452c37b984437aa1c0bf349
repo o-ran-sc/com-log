@@ -1,0 +1,11 @@
+Code-Review+2: Thoralf Czichy <thoralf.czichy@nokia.com>
+Code-Review+1: Timo Tietavainen <timo.tietavainen@nokia.com>
+Code-Review+1: Sindhu N <sindhu.1.n@nokia.com>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Verified+1: Thoralf Czichy <thoralf.czichy@nokia.com>
+Submitted-by: Thoralf Czichy <thoralf.czichy@nokia.com>
+Submitted-at: Tue, 06 Feb 2024 08:46:26 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/com/log/+/12491
+Project: com/log
+Branch: refs/heads/master
